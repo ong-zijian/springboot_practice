@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: 17  # Specify the Java version you want to use
-          #distribution: 'adopt'  # Specify the distribution (adopt, zulu, etc.)
+          distribution: 'adopt'  # Specify the distribution (adopt, zulu, etc.)
 
       - name: Build and test
         run: mvn clean install
