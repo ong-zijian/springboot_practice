@@ -1,9 +1,9 @@
-name: Spring Boot CI/CD Workflow
+name: Build and Test
 
 on:
   push:
     branches:
-      - main  # Replace with your default branch name
+      - main
 
 jobs:
   build-and-test:
@@ -16,7 +16,8 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v2
         with:
-          java-version: 17
+          java-version: 17  # Specify the Java version you want to use
+          distribution: 'adopt'  # Specify the distribution (adopt, zulu, etc.)
 
-      - name: Build and test Spring Boot app
-        run: mvn clean install
+      - name: Build and test
+        run: ./gradlew build
